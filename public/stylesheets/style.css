@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#santutu{
+  width: 1000px;
+  height: 200px;
+  font-size: 50px;
+  background-color: green;
+  transition: all, 2s;
+}
+
+#santutu:hover{
+  transform: rotateZ(-90deg);
+  transform: translateX(500px);
+  width: 500px;
+  height: 200px;
+  font-size: 10px;
+  background-color: blue;
+}

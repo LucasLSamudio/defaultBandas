@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Bandas</title>
+</head>
+<body>
+    <h1>Bandas</h1>
+    <ul>
+        <% info.forEach(function(banda) { %>
+            <li>
+                <strong><%= banda.nombre %></strong> - <%= banda.genero %> 
+                (<a href="/bandas/<%= banda.id %>">Ver detalles</a>)
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

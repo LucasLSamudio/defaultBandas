@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= banda.nombre %></title>
+</head>
+<body>
+    <h1><%= banda.nombre %></h1>
+    <img src="<%= banda.cover %>" alt="Cover de <%= banda.nombre %>">
+    <p>Integrantes: <%= banda.integrantes %></p>
+    <p>Género: <%= banda.genero %></p>
+    <h3>Top Canciones:</h3>
+        <ul>
+            <% banda.topCanciones.forEach(function(cancion) { %>
+                <li><%= cancion %></li>
+            <% }); %>
+        </ul>
+    <a href="<%= banda.video %>" target="_blank">Ver Video</a>
+</body>
+</html>
