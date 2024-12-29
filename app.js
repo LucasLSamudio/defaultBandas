@@ -30,7 +30,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/bandas', bandasRouter)
 app.use('/id', bandasRouter)
-app.use('/genero/:algo?', bandasRouter)
+app.use('/genero', bandasRouter)
 // app.use('/productos', require("./src/routes/productos.router"));
 
 

@@ -15,7 +15,7 @@ const bandasController = require('../controller/bandasControllers')
 /* PRUEBAS */
 
 router.get('/', bandasController.index);
-router.get('/genero/:genero?', bandasController.porGenero);
-router.get('/id/:id', bandasController.porId);
+router.get('/genero/:genero', bandasController.porGenero);
+router.get('/:id', bandasController.porId);
 
 module.exports = router 

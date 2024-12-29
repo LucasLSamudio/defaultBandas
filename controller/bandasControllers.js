@@ -1,9 +1,13 @@
 const bandasInfo = require('../db/index')
 
 const bandasController = {
-    index: function(req, res, next) {
-        return res.render('bandas', { info: bandasInfo.lista });
+    index: (req, res) => {
+        res.send(bandasInfo.lista)
     },
+
+    // index: function(req, res, next) {
+    //     return res.render('bandas', { info: bandasInfo.lista });
+    // },
     // index: function(req, res, next){
     //     const allBandas = req.params.allBandas;
     //     const banda = bandasInfo.lista;
@@ -11,17 +15,19 @@ const bandasController = {
     // },
 
     /* ---------------------------------------------------  */
-
-
-    porId: function(req, res, next) {
-        const id = parseInt(req.params.id, 10);
-        const banda = bandasInfo.lista.find(b => b.id === id);
-        if (banda) {
-            return res.render('id', { banda });
-        } else {
-            return res.status(404).send('Banda no encontrada');
-        }
+    porId: (req, res) => {
+        res.send(bandasInfo.lista.find(banda => banda.id == req.params.id));
     },
+
+    // porId: function(req, res, next) {
+    //     const id = parseInt(req.params.id, 10);
+    //     const banda = bandasInfo.lista.find(b => b.id === id);
+    //     if (banda) {
+    //         return res.render('id', { banda });
+    //     } else {
+    //         return res.status(404).send('Banda no encontrada');
+    //     }
+    // },
     // porId: function(req, res, next){
     //     return res.render('id', {id: bandasInfo.lista[i].id})
     // },
@@ -31,16 +37,19 @@ const bandasController = {
     // }
 
     /* ----------------------------------------------------- */
-    
-    porGenero: function(req, res, next) {
-        const genero = req.params.genero.toLowerCase();
-        const bandasPorGenero = bandasInfo.lista.filter(b => b.genero.toLowerCase() === genero);
-        if (bandasPorGenero.length > 0) {
-            return res.render('genero', { genero, bandasInfo: bandasPorGenero });
-        } else {
-            return res.status(404).send('No hay bandas de este género');
-        }
-    }
+    porGenero: (req, res) => {
+        res.send(bandasInfo.lista.find(banda => banda.genero == req.params.genero));
+    },
+
+    // porGenero: function(req, res, next) {
+    //     const genero = req.params.genero.toLowerCase();
+    //     const bandasPorGenero = bandasInfo.lista.filter(b => b.genero.toLowerCase() === genero);
+    //     if (bandasPorGenero.length > 0) {
+    //         return res.render('genero', { genero, bandasInfo: bandasPorGenero });
+    //     } else {
+    //         return res.status(404).send('No hay bandas de este género');
+    //     }
+    // }
 }
 
 // const bandasController = {
