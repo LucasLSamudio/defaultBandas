@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1><%= banda.nombre %></h1>
+    <%-include('./partials/menu')%>
     <img src="<%= banda.cover %>" alt="Cover de <%= banda.nombre %>">
     <p>Integrantes: <%= banda.integrantes %></p>
     <p>Género: <%= banda.genero %></p>
