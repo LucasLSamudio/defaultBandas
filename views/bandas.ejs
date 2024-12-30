@@ -9,10 +9,10 @@
     <h1>Bandas</h1>
     <%-include('./partials/menu')%>
     <ul>
-        <% info.forEach(function(banda) { %>
+        <% bandasInfo.forEach(function(b) { %>
             <li>
-                <strong><%= banda.nombre %></strong> - <%= banda.genero %> 
-                (<a href="/bandas/<%= banda.id %>">Ver detalles</a>)
+                <strong><%= b.nombre %></strong> - <%= b.genero %> 
+                (<a href="/bandas/<%= b.id %>">Ver detalles</a>)
             </li>
         <% }); %>
     </ul>

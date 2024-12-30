@@ -4,12 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
         /* Rutas REQUIRE */
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const bandasRouter = require('./routes/bandasRoutes');
+const bandasIdRouter = require('./routes/bandasIdRoutes');
+const bandasGeneroRouter = require('./routes/bandasGenerosRoutes');
 const bandas = require('./db');
 
 var app = express();
@@ -28,9 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/bandas', bandasRouter)
-app.use('/id', bandasRouter)
-app.use('/genero', bandasRouter)
+// app.use('/bandas', bandasRouter)
+app.use('/genero', bandasGeneroRouter)
+app.use('/id', bandasIdRouter)
 // app.use('/productos', require("./src/routes/productos.router"));
 
 

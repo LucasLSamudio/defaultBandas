@@ -1,6 +1,9 @@
+const bandas = require('../db/index');
 const bandasInfo = require('../db/index')
 
-const bandasController = {
+// res.render('Nombre de la view',{datos necesarios para mostrar en la vista: 'lo que yo quiera(ordenados)'});
+
+const bandasIdController = {
     index: (req, res) => {
         res.send(bandasInfo.lista)
     },
@@ -16,7 +19,12 @@ const bandasController = {
 
     /* ---------------------------------------------------  */
     porId: (req, res) => {
+        const newArr = bandasInfo.lista.map(banda => banda.id);
+        if(!newArr.includes(Number(req.params.id))){
+            res.status(404).send('No hay bandas con este ID.');
+        }
         res.send(bandasInfo.lista.find(banda => banda.id == req.params.id));
+        
     },
 
     // porId: function(req, res, next) {
@@ -37,10 +45,6 @@ const bandasController = {
     // }
 
     /* ----------------------------------------------------- */
-    porGenero: (req, res) => {
-        res.send(bandasInfo.lista.find(banda => banda.genero == req.params.genero));
-    },
-
     // porGenero: function(req, res, next) {
     //     const genero = req.params.genero.toLowerCase();
     //     const bandasPorGenero = bandasInfo.lista.filter(b => b.genero.toLowerCase() === genero);
@@ -65,4 +69,4 @@ const bandasController = {
 // }
 
 
-module.exports = bandasController; 
+module.exports = bandasIdController; 

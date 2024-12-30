@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const bandasController = require('../controller/bandasControllers')
+const generosController = require('../controller/bandasGenerosControllers')
 
 // Forma 1
 
@@ -14,8 +14,7 @@ const bandasController = require('../controller/bandasControllers')
 
 /* PRUEBAS */
 
-router.get('/', bandasController.index);
-router.get('/genero/:genero', bandasController.porGenero);
-router.get('/:id', bandasController.porId);
+router.get('/:genero', generosController.porGenero); // Esto es /id/:genero
+router.get('/', generosController.index);
 
 module.exports = router 
