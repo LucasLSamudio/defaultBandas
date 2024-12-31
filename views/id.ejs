@@ -9,8 +9,8 @@
     <h1>Por ID</h1>
     <%-include('./partials/menu')%>
     <ul>
-        <% banda.forEach(function(b) { %>
-            <img src="../public/images/#" alt="Cover de <% b.nombre %>">
+        <% banda.forEach(b => { %>
+            <img src= "<%= b.cover %>"  alt="Cover de <% b.nombre %>">
             <li>
                 <h3><%= b.nombre %></h3>
                 <p>Genero: <%= b.genero %></p>
