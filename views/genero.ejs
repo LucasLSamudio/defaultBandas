@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandas de <%= genero %></title>
+    <title>Bandas <%= g[0].genero %></title>
 </head>
 <body>
-    <h1>Bandas de <%= genero %></h1>
+    <h1>Bandas de <%= g[0].genero %></h1>
     <%-include('./partials/menu')%>
     <ul>
-        <% bandas.forEach(function(banda) { %>
+        <% g.forEach(function(banda) { %>
             <li>
-                <strong><%= banda.nombre %></strong> 
-                (<a href="/bandas/<%= banda.id %>">Ver detalles</a>)
-            </li>
+                <h3><%= banda.nombre %></h3>
+                <p>Genero: <%= banda.genero %></p>
+                <h4>TOP Canciones:</h4>
+                <ul> 
+                <% for(i=0;i<banda.topCanciones.length;i++){ %>
+                    <li> <%= banda.topCanciones[i] %></li>
+                <% } %>
+                </ul><br>
         <% }); %>
     </ul>
 </body>

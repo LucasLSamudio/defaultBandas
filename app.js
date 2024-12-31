@@ -8,6 +8,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const bandasIndexRouter = require('./routes/bandasIndexRoutes');
 const bandasIdRouter = require('./routes/bandasIdRoutes');
 const bandasGeneroRouter = require('./routes/bandasGenerosRoutes');
 const bandas = require('./db');
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/bandas', bandasRouter)
+app.use('/bandas', bandasIndexRouter)
 app.use('/genero', bandasGeneroRouter)
 app.use('/id', bandasIdRouter)
 // app.use('/productos', require("./src/routes/productos.router"));

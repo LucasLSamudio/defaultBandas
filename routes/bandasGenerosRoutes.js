@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const generosController = require('../controller/bandasGenerosControllers')
+const generosController = require('../controller/bandasGenerosController')
 
 // Forma 1
 

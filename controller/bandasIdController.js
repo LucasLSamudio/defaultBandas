@@ -1,11 +1,15 @@
-const bandas = require('../db/index');
 const bandasInfo = require('../db/index')
 
 // res.render('Nombre de la view',{datos necesarios para mostrar en la vista: 'lo que yo quiera(ordenados)'});
 
 const bandasIdController = {
     index: (req, res) => {
-        res.send(bandasInfo.lista)
+        const idArr = bandasInfo.lista.filter(banda => (banda.id));
+        console.log(idArr);
+        res.render('id', {banda: idArr});
+        
+        console.log(idArr[0].video);
+        
     },
 
     // index: function(req, res, next) {
@@ -23,7 +27,8 @@ const bandasIdController = {
         if(!newArr.includes(Number(req.params.id))){
             res.status(404).send('No hay bandas con este ID.');
         }
-        res.send(bandasInfo.lista.find(banda => banda.id == req.params.id));
+        const banda = bandasInfo.lista.find(banda => banda.id == req.params.id)
+        res.render('id', {banda});
         
     },
 
