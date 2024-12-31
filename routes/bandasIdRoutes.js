@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const bandasIdController = require('../controller/bandasIdControllers')
+const bandasIdController = require('../controller/bandasIdController')
 
 // Forma 1
 
