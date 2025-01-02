@@ -14,7 +14,8 @@
         <input type="text" id="searchID" placeholder="Ejemplo: 4"><button>Enviar</button>
     </form>
     <ul>
-        <% banda.forEach(function(b) { %>
+        <% banda.forEach(b => { %>
+            <img src= "<%= b.cover %>"  alt="Cover de <% b.nombre %>">
             <li>
                 <h3><%= b.nombre %></h3>
                 <img src="<%=b.cover %>" alt="Cover de <%= b.nombre %>">

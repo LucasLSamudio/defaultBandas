@@ -36,7 +36,7 @@ const bandas = {
                 nombre: "Canserbero",
                 integrantes: 1,
                 genero: "Rap",
-                topCanciones: ["Es épico", "Maquiavéñico", "Jeremías 17:5"],
+                topCanciones: ["Es épico", "Maquiavélico", "Jeremías 17:5"],
                 cover: 'images/canserbero.jpg',
                 id: 5,
                 video: "https://www.youtube.com/watch?v=sq6oc066w14"
