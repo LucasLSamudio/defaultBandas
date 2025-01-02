@@ -4,7 +4,10 @@ const bandasInfo = require('../db/index')
 
 const bandasIndexController = {
     index: (req, res) => {
-        res.render('bandas',{bandasInfo: bandasInfo.lista})
+        res.render('bandas',{
+            bandasInfo: bandasInfo.lista,
+            title: 'Todas las bandas'
+        })
     }
 }
 

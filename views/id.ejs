@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= banda.nombre %></title>
+    <title><%= title %></title>
 </head>
 <body>
-    <h1>Por ID</h1>
+    <h1><%=title%></h1>
+    <p>Welcome to my page</p> 
     <%-include('./partials/menu')%>
+    <form class="form-search">
+        <label for="searchID">Ingrese un ID para buscar a la banda deseada:</label>
+        <input type="text" id="searchID" placeholder="Ejemplo: 4"><button>Enviar</button>
+    </form>
     <ul>
         <% banda.forEach(b => { %>
             <img src= "<%= b.cover %>"  alt="Cover de <% b.nombre %>">
             <li>
                 <h3><%= b.nombre %></h3>
+                <img src="<%=b.cover %>" alt="Cover de <%= b.nombre %>">
                 <p>Genero: <%= b.genero %></p>
                 <p>Integrantes: <%= b.integrantes %></p>
                 <h4>TOP Canciones:</h4>
@@ -20,7 +26,7 @@
                 <% for(i=0;i<b.topCanciones.length;i++){ %>
                     <li> <%= b.topCanciones[i] %></li>
                 <% } %>
-                <p> <a href="<%b.video%>" target="_blank">VIDEO</a></p>
+                <p> <a href="<%-b.video%>" target="_blank">VIDEO</a></p>
                 </ul><br>
         <% }); %>
     </ul>

@@ -29,7 +29,7 @@ const bandas = {
                 integrantes: 8,
                 genero: "Hip hop",
                 topCanciones: ["C.R.E.A.M","Method man","Da mystery of chessboxin'"],
-                cover: 'images/wu.png',
+                cover: 'images/wu.jpg',
                 id: 4,
                 video: "https://www.youtube.com/watch?v=PEnwXYJcSZc"
             },{
